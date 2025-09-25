@@ -85,3 +85,18 @@ var swiper = new Swiper(".review-slider", {
 // }
 
 // window.onload = fadeOut;
+
+//  <!-- زر الواتساب -->
+ function toggleChat() {
+      const chat = document.getElementById("whatsappChat");
+      chat.style.display = chat.style.display === "flex" ? "none" : "flex";
+    }
+
+    function sendMessage() {
+      const message = document.getElementById("chatMessage").value;
+      if (message.trim() !== "") {
+        const phoneNumber = "+447342476497"; // ← غيّر الرقم هنا
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, "_blank");
+      }
+    }
